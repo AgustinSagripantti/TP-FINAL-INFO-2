@@ -51,13 +51,13 @@ void loop() {
     }
     Serial.print(rfid.uid.uidByte[i], HEX);
   }
-  Serial.println(); // El '\n' vital para delimitar en la PC
+  Serial.println(); // El '\n' para delimitar en la PC
 
   // Detiene la tarjeta para evitar ráfagas repetidas
   rfid.PICC_HaltA();
   rfid.PCD_StopCrypto1();
 
-  delay(200); // Pequeño respiro anti-rebote 
+  delay(200); // Anti-rebote 
 
     while(Serial.available() > 0){
     
@@ -78,7 +78,6 @@ void loop() {
       unsigned long delta = millis() - tiempoInicio;
       // 1. A los 500 ms
       if (delta >= 500 ) {
-       // Tu acción acá (ej: prender un buzzer, LED, etc.)
          analogWrite(MOTOR, 0);
 
     if (botonPresionado) {

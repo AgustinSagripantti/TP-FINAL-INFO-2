@@ -43,7 +43,7 @@ int main(void){
   tcsetattr(fda, TCSANOW, &config_nueva);
 
 
-  const char *codigo_valido = "6347B219"; // Reemplazá por el UID de tu tarjeta
+  const char *codigo_valido = "6347B219"; 
 
   char buffer_uid[64];
   int idx = 0;
